@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { addPost } from "./api";
 
 const AddPostForm = (props) => {
   const { handleAddPost } = props;

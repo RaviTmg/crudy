@@ -15,6 +15,7 @@ export const deletePost = (postId) =>
   fetch(`${BASE_URL}/posts/${postId}`, {
     method: "DELETE",
   }).then((response) => response.json());
+
 export const editPost = ({ id, title, body, userId }) =>
   fetch(`${BASE_URL}/posts/${id}`, {
     method: "PUT",
