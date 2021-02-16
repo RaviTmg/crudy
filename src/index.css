@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');;
+body{
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+textarea{
+  font-family: inherit;
+}
 .App{
   display: flex;
   align-items: flex-start;
+  overflow: auto;
+  height: 100vh;
 }
 .add-post-form{
   display: flex;
@@ -30,6 +41,7 @@
   transform: translate(-50%,-50%);
   box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%);
   border-radius: 0.25rem;
+  min-width: 300px;
 }
 .edit-post-modal-heading{
   display: flex;
@@ -45,8 +57,9 @@
 }
 .edit-post-form label{
   margin: 0.5rem 0;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .post-list-item{
   border: 1px solid #f0f0f0;

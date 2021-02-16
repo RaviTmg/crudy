@@ -35,13 +35,9 @@ export const EditPostProvider = ({ children }) => {
   return (
     <>
       <EditPostContext.Provider value={openConfirmation} children={children} />
-
-      <EditPostDialog
-        open={Boolean(confirmationState)}
-        handleEditPost={handleSubmit}
-        onClose={handleClose}
-        {...confirmationState}
-      />
+      {confirmationState && (
+        <EditPostDialog handleEditPost={handleSubmit} onClose={handleClose} {...confirmationState} />
+      )}
     </>
   );
 };

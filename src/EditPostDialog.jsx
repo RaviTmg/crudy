@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const EditPostDialog = (props) => {
-  const { post, handleEditPost, open, onClose } = props;
+  const { post, handleEditPost, onClose } = props;
   const [formValue, setFormValue] = useState(post);
   useEffect(() => {
     setFormValue(post);
@@ -10,11 +10,7 @@ const EditPostDialog = (props) => {
     e.preventDefault();
     handleEditPost(formValue);
   };
-  useEffect(() => {
-    if (open) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "unset";
-  }, [open]);
-  return open && formValue ? (
+  return (
     <div className="edit-post-backdrop" onClick={onClose}>
       <div className="edit-post-modal" onClick={(e) => e.stopPropagation()}>
         <div className="edit-post-modal-heading">
@@ -33,6 +29,8 @@ const EditPostDialog = (props) => {
           <label>
             Body:
             <textarea
+              rows="4"
+              cols="50"
               value={formValue.body}
               placeholder="content of post"
               onChange={(e) => setFormValue({ ...formValue, body: e.target.value.trim() })}
@@ -42,8 +40,6 @@ const EditPostDialog = (props) => {
         </form>
       </div>
     </div>
-  ) : (
-    <></>
   );
 };
 
